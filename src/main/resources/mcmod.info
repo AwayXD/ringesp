@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ringesp",
+  "name": "RingESP",
+  "description": "ring esp for ravenb4",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["away"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
