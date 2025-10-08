@@ -5,20 +5,38 @@ import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.lwjgl.opengl.GL11;
+import xyz.phantomac.ringesp.manager.ModManager;
 import xyz.phantomac.ringesp.utils.RenderSystem;
 
 import java.awt.*;
 
 
-public class RingLogic {
+public class RingLogic implements ModManager.ModLifecycle {
+
+    public static boolean enabled = true;
+
+    @Override
+    public String getTag() {
+        return null;
+    }
+
+    @Override
+    public void onEnable() {
+        enabled = true;
+    }
+
+    @Override
+    public void onDisable() {
+        enabled = false;
+    }
 
     private final Minecraft mc = Minecraft.getMinecraft();
 
     // gl logic is mostly skidded from my project Sigma Rebase - thanks sigma devs lmao
 
-    public static boolean enabled = true;
     private long lastSwingTime = 0L;
     private final long pain = 1000;
 

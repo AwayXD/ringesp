@@ -8,6 +8,8 @@ import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import xyz.phantomac.ringesp.gl.SimsESP;
+import xyz.phantomac.ringesp.manager.ModManager;
 import xyz.phantomac.ringesp.utils.ChatUtils;
 import xyz.phantomac.ringesp.gl.RingLogic;
 
@@ -21,8 +23,10 @@ public class RingESP {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(new RingLogic());
-        ClientCommandHandler.instance.registerCommand(new ToggleCommand());
+     //   ClientCommandHandler.instance.registerCommand(new ToggleCommand());
+        ClientCommandHandler.instance.registerCommand(new ModManager.UtilsCommand());
+        MinecraftForge.EVENT_BUS.register(new ModManager());
+
     }
 
 
